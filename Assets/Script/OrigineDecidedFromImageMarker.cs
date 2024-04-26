@@ -27,7 +27,6 @@ public class OriginDecideFromImageMaker : MonoBehaviour
     /// ƒRƒ‹[ƒ`ƒ“
     /// </summary>
     private Coroutine _coroutine;
-
     private void OnEnable()
     {
         _worldOrigin = new GameObject("Origin");
