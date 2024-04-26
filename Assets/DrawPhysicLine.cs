@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 public class DrawPhysicLine : MonoBehaviour
 {
     public Slider R;
@@ -16,6 +17,7 @@ public class DrawPhysicLine : MonoBehaviour
     private float length;
     private float width;
     public Vector3 p;
+    public TextMeshProUGUI logText;
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +28,10 @@ public class DrawPhysicLine : MonoBehaviour
         width=lineWidth*Size.value;
         length =lineLength*Size.value;
         p = Camera.main.transform.TransformPoint(0, 0, 0.1f);
+        float x = Camera.main.transform.position.x;
+        float y = Camera.main.transform.position.y;
+        float z = Camera.main.transform.position.z;
+        logText.text="( "+x.ToString()+" , "+y.ToString()+" , "+z.ToString()+" )";
         drawLine();
     }
     void drawLine()
